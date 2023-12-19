@@ -1,0 +1,47 @@
+@use './mixins' as *;
+@use './variables' as *;
+// @use '../../assets/styles/variables' as *;
+// @use '../../assets/styles/mixins' as *;
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+a,
+button {
+  @extend %indents-reset;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+input {
+  touch-action: none;
+}
+
+.body {
+  background-color: $color-primary;
+}
+
+.root {
+  margin: 0 auto;
+  max-width: 1440px;
+  font-family: 'Inter';
+}

@@ -1,0 +1,27 @@
+@mixin uploadFonts($file, $format, $family, $weight) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    font-display: swap;
+    src: url(#{$file}) format($format);
+  }
+}
+
+@include uploadFonts(
+  $file: '../fonts/Inter-Regular.woff2',
+  $format: 'woff2',
+  $family: 'Montserrat',
+  $weight: 400
+);
+@include uploadFonts(
+  $file: '../fonts/Inter-Medium.woff2',
+  $format: 'woff2',
+  $family: 'Inter',
+  $weight: 500
+);
+@include uploadFonts(
+  $file: '../fonts/Inter-SemiBold.woff2',
+  $format: 'woff2',
+  $family: 'Inter',
+  $weight: 600
+);

@@ -1,0 +1,51 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 33px;
+
+  &__wrapper {
+    display: flex;
+    gap: 26px;
+  }
+  
+  &__info {
+    display: flex;
+    gap: 25px;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  &__nav {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__button {
+    border: none;
+    background-color: inherit;
+  }
+
+  &__text {
+    @include showFonts(
+      $size: 18px,
+      $color: $color-text-black,
+      $line-height: normal,
+      $weight: 600
+    );
+
+    &_type_convert {
+      margin-left: 8px;
+    }
+    &_type_profile {
+      margin-left: 10px;
+    }
+  }
+
+}
