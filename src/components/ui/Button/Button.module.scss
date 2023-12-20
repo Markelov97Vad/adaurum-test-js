@@ -1,0 +1,22 @@
+@use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixins' as *;
+
+.button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 21px;
+  @include showFonts(
+      $size: 16px,
+      $color: $color-white,
+      $line-height: normal,
+      $weight: 600
+    );
+
+  &_color_blue {
+    background-color: $color-blue;
+  }
+  
+  &_color_pink {
+    background-color: $color-pink;
+  }
+}

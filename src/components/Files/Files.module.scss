@@ -1,0 +1,38 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
+.files {
+  width: 295px;
+  height: 709px;
+  background-color: $color-white;
+  box-shadow: $shadow;
+  border-radius: 20px;
+  padding: 28px 11px;
+  box-sizing: border-box;
+
+  &__title {
+    margin-left: 9px;
+    @include showFonts(
+      $size: 24px,
+      $color: $color-text-black,
+      $line-height: normal,
+      $weight: 600
+    );
+  }
+
+  &__image {
+    margin-top: 46px;
+  }
+
+  &__subtitle {
+    margin-left: 6px;
+    @include showFonts(
+      $size: 16px,
+      $color: $color-text-black,
+      $line-height: 23.2px,
+      $weight: 500
+    );
+
+    margin-top: 30px;
+  }
+}

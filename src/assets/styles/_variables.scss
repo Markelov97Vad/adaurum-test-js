@@ -2,12 +2,14 @@ $color-primary: #F5F5F5;
 $color-gray: #EBEBEB;
 $color-pink: #EE26C2;
 $color-blue: #2676EE;
-
+$color-white: #FFFFFF;
 
 $color-text-gray: #525252;
 $color-text-black: #000000;
 
 $color-button-gray: #CBCBCB;
+
+$shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
 
 %indents-reset {
   margin: 0;

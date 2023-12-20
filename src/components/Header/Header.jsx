@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 function Header() {
   return (
     <header className={styles.header}>
-      <Logo/>
+      <Logo gray={false}/>
       <div className={styles.header__wrapper}>
         <div className={styles.header__info}>
           <div className={styles['header__info-wrapper']}>
@@ -20,10 +20,10 @@ function Header() {
             <span className={`${styles.header__text} ${styles.header__text_type_profile}`}>Username@adaurum.ru</span>
           </div>
         </div>
-        <div className={styles['header__nav']}>
+        <nav className={styles['header__nav']}>
           <button className={styles.header__button} type="button"><Settings/></button>
           <button className={styles.header__button} type="button"><Logout/></button>
-        </div>
+        </nav>
       </div>
     </header>
   );

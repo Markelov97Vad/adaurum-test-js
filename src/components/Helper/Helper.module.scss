@@ -1,0 +1,48 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
+.chat {
+  width: 875px;
+  height: 709px;
+  background-color: $color-white;
+  box-shadow: $shadow;
+  border-radius: 20px;
+  padding: 26px 28px 28px;
+  box-sizing: border-box;
+
+  &__header {
+   display: flex;
+   justify-content: space-between; 
+   align-items: center;
+   margin-bottom: 19px;
+  }
+
+  &__title {
+    @include showFonts(
+      $size: 24px,
+      $color: $color-text-black,
+      $line-height: normal,
+      $weight: 600
+    );
+  }
+
+  &__text {
+    @include showFonts(
+      $size: 15px,
+      $color: $color-text-black,
+      $line-height: normal,
+      $weight: 600
+    );
+
+    &_type_mail {
+      color: $color-text-gray;
+    }
+  }
+
+  &__button-menu {
+    background-color: inherit;
+    border: none;
+    height: 40px;
+    width: 40px;
+  }
+}

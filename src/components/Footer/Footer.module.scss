@@ -1,0 +1,48 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
+.footer {
+  width: 100%;
+  background-color: $color-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin: 0 auto;
+  
+  &__wrapper {
+    box-sizing: border-box;
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+
+  }
+
+  &__text {
+    @include showFonts(
+      $size: 18px,
+      $color: $color-text-gray,
+      $line-height: 21.75px,
+      $weight: 500
+    );
+
+    &_type_icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__icon {
+    margin-right: 12px;
+    max-height: 24px;
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-height: 40px;
+  }
+}
