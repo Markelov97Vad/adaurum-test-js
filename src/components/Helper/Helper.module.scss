@@ -23,6 +23,7 @@
   }
 
   &__header {
+    position: relative;
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -91,5 +92,13 @@
     @include mobile_s {
       order: 2;
     }
+  }
+
+  &__popup-wrapper {
+    // order: 5;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 10;
   }
 }

@@ -36,6 +36,18 @@ input {
   touch-action: none;
 }
 
+.html {
+  scrollbar-color: $color-scrollbar;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color-scrollbar;
+    border-radius: 5px;
+  }
+}
+
 .body {
   background-color: $color-primary;
   -moz-osx-font-smoothing: grayscale;

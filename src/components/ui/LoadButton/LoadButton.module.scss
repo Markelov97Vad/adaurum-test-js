@@ -3,4 +3,9 @@
   width: 42px;
   height: 42px;
   background-color: inherit;
+  transition: transform .2s ease-in;
+
+  &:active {
+    transform: scale(.7);
+  }
 }

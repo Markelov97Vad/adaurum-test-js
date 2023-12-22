@@ -1,0 +1,30 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
+.popup {
+  display: flex;
+  background-color: $color-white;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  width: 332px;
+  padding: 16px 30px;
+  gap: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+
+  &__span {
+    cursor: default;
+    @include showFonts(
+      $size: 16px,
+      $color: $color-text-black,
+      $line-height: normal,
+      $weight: 500
+    );
+
+    &:hover {
+      color: $color-pink;
+    }
+  }
+}

@@ -2,6 +2,15 @@
 @use '../../assets/styles/mixins' as *;
 
 .loading-wrapper {
+  overflow: visible;
+  opacity: 1;
+  margin-bottom: 8px;
+  &_hidden {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+  }
   
   .loading-element {
     background-color: $color-primary;
@@ -9,10 +18,11 @@
 
     &__wrapper {
       display: flex;
+      justify-content: space-between;
     }
     
     &__info {
-      padding: 9px 20px 9px 9px;
+      padding: 9px 0 9px 9px;
       display: flex;
       align-items: center;
       gap: 9px;
@@ -39,6 +49,8 @@
     align-items: center;
     gap: 5px;
     background-color: $color-white;
+    margin-bottom: 6px;
+
     &__text {
       @include showFonts(
       $size: 12px,

@@ -23,6 +23,26 @@
 
   &__header-icon {
     margin-right: 9px;
+    transition: all .2s ease-in-out;
+
+    &_close {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__element-container {
+    display: flex;
+    flex-direction: column;
+    // gap: 8px;
+    height: 100%;
+    opacity: 1;
+    overflow: visible;
+    transition: all .2s, visibility 0.2s;
+    &_disabled {
+      overflow: hidden;
+      height: 0;
+      opacity: 0;
+    }
   }
 
   &__button-show {

@@ -2,6 +2,7 @@
 @use '../../assets/styles/mixins' as *;
 
 .files {
+  width: 100%;
   max-width: 295px;
   max-height: 709px;
   background-color: $color-white;
@@ -9,6 +10,22 @@
   border-radius: 20px;
   padding: 28px 11px;
   box-sizing: border-box;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+    scrollbar-color: $color-scrollbar inherit;
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 80px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $color-scrollbar;
+      border-radius: 54px;
+      width: 6px;
+      height: 80px;
+    }
 
   @include mobile {
     display: flex;

@@ -2,11 +2,12 @@ import DownloadIcon from "../../icons/DownloadIcon";
 import UpdateIcon from "../../icons/UpdateIcon";
 import styles from './LoadButton.module.scss';
 
-function LoadButton() {
+function LoadButton({ onClick , isUploaded }) {
 
   return (
-    // <button type="button"><UpdateIcon/></button>
-    <button className={styles[['load-button']]} type="button"><DownloadIcon/></button>
+    <button onClick={onClick} className={styles[['load-button']]} type="button">
+      {isUploaded ? <DownloadIcon/> : <UpdateIcon/>}
+    </button>
   );
 }
 
