@@ -46,10 +46,14 @@ input {
   text-rendering: optimizeLegibility;
   margin: 0 auto;
   max-width: 1440px;
+
+  @include mobile_s {
+    background-color: $color-white;
+  }
 }
 
 .root {
-  max-width: 1440px;
-  display: grid;
-  place-items: center;
+  // max-width: 1440px;
+  // display: grid;
+  // place-items: center;
 }

@@ -2,13 +2,27 @@
 @use '../../assets/styles/mixins' as *;
 
 .files {
-  width: 295px;
-  height: 709px;
+  max-width: 295px;
+  max-height: 709px;
   background-color: $color-white;
   box-shadow: $shadow;
   border-radius: 20px;
   padding: 28px 11px;
   box-sizing: border-box;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 688px;
+    max-height: 405px;
+  }
+
+  @include mobile_s{
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: none;
+  }
 
   &__title {
     margin-left: 9px;
@@ -18,10 +32,38 @@
       $line-height: normal,
       $weight: 600
     );
+
+    @include mobile_s{
+      display: none;
+    }
+  }
+
+  &__data-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 32px;
+  }
+
+  &__container {
+    @include mobile {
+      display: flex;
+      margin-inline: 86px 80px;
+    }
+
+    @include mobile_s{
+      display: none;
+    }
   }
 
   &__image {
     margin-top: 46px;
+
+    @include mobile {
+      margin-top: 0;
+      width: 247px;
+      height: 304px;
+    }
   }
 
   &__subtitle {
@@ -34,5 +76,20 @@
     );
 
     margin-top: 30px;
+
+    @include mobile {
+      margin-top: 123px;
+      margin-left: 0;
+    }
+  }
+
+  &__modification {
+    display: none;
+    
+    @include mobile_s {
+      background-color: inherit;
+      display: flex;
+      gap: 12px;
+    }
   }
 }

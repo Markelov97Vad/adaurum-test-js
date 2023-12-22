@@ -1,7 +1,21 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
 .main {
   margin: 0 auto;
   max-width: 1200px;
   display: flex;
   gap: 30px;
   padding: 38px 0 60px;
+
+  @include mobile {
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @include mobile_s {
+    padding-top: 0;
+  }
 }

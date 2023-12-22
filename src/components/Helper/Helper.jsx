@@ -8,12 +8,14 @@ function Helper() {
         <h2 className={styles.chat__title}>
           Личный помощник 
         </h2>
-        <p className={styles.chat__text}>
-          Jim Davidson
-        </p>
-        <p className={`${styles.chat__text} ${styles.chat__text_type_mail}`}>
-          Jim Davidson@adaurum.ru
-        </p>
+        <div className={styles.chat__info}>
+          <p className={styles.chat__text}>
+            Jim Davidson
+          </p>
+          <p className={`${styles.chat__text} ${styles.chat__text_type_mail}`}>
+            Jim Davidson@adaurum.ru
+          </p>
+        </div>
         <button className={styles['chat__button-menu']} type="button">
           <MenuIcon/>
         </button>

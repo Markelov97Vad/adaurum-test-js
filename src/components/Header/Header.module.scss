@@ -4,19 +4,42 @@
 .header {
   display: flex;
   justify-content: space-between;
+  // margin: 0;
   align-items: center;
-  width: 100%;
+  // width: 100%;
   max-width: 1200px;
   padding-top: 33px;
+  margin: 0 auto;
+  padding-inline: 40px;
+
+  @include mobile_s {
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: inherit;
+    padding: 28px 20px 0;
+  }
 
   &__wrapper {
     display: flex;
     gap: 26px;
+
+    @include mobile_s {
+      // flex-direction: column-reverse;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+      // gap: 4px;
+    }
   }
   
   &__info {
     display: flex;
     gap: 25px;
+
+    @include mobile_s {
+      flex-direction: column-reverse;
+      gap: 4px;
+    }
 
     &-wrapper {
       display: flex;
@@ -29,9 +52,16 @@
     gap: 12px;
   }
 
+  &__icon {
+    
+    @include mobile_s {
+      display: none;
+    }
+  }
+  
   &__button {
     border: none;
-    background-color: inherit;
+    background-color: inherit
   }
 
   &__text {
@@ -41,6 +71,10 @@
       $line-height: normal,
       $weight: 600
     );
+
+    @include mobile {
+      font-size: 15px;
+    }
 
     &_type_convert {
       margin-left: 8px;

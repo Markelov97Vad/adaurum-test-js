@@ -10,7 +10,12 @@
       $color: $color-white,
       $line-height: normal,
       $weight: 600
-    );
+  );
+
+  @include mobile {
+    font-size: 12px;
+    
+  }
 
   &_color_blue {
     background-color: $color-blue;
@@ -18,5 +23,15 @@
   
   &_color_pink {
     background-color: $color-pink;
+  }
+
+  &_color_gray {
+    background-color: $color-gray;
+    border-radius: 4px;
+    color: $color-text-black;
+
+    @include mobile_s {
+      padding: 12px;
+    }
   }
 }

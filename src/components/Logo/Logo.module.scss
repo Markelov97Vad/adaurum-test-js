@@ -1,0 +1,16 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
+.logo {
+  width: 219px;
+  height: 32px;
+
+  @include mobile {
+    width: 209px;
+    height: 29px;
+  }
+  @include mobile_s {
+    width: 181px;
+    height: 24px;
+  }
+}

@@ -7,17 +7,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // margin: 0 auto;
+  
+  @include mobile_s {
+    background-color: $color-white;
+    // justify-content: start;
+  }
   
   &__wrapper {
     box-sizing: border-box;
-    padding: 28px 0;
+    padding: 28px 40px 27px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1200px;
+    flex-wrap: wrap;
+    
+    @include mobile {
+      justify-content: flex-start;
+      padding-top: 35px;
+      padding-bottom: 32px;
+      row-gap: 25px;
+    };
+    
+    @include mobile_s {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 20px;
+      padding: 40px 20px 40px;
+    }
+  }
 
+  &__logo {
+    // grid-area: logo;
+    @include mobile {
+      order: 1;
+    }
   }
 
   &__text {
@@ -28,15 +53,68 @@
       $weight: 500
     );
 
-    &_type_icon {
+    @include mobile {
+      font-size: 15px;
+    }
+    @include mobile_s {
+      font-size: 14px;
+      line-height: 20.3px;
+    }
+
+    &_type_politic {
+      @include mobile {
+        order: 2;
+        margin-inline: 41px 100px;
+      };
+
+      @include mobile_s {
+        margin-inline: 0
+      };
+    }
+
+    &_type_mail {
+      // grid-area: mail;
       display: flex;
       align-items: center;
+
+      @include mobile {
+        order: 5;
+      };
+
+      @include mobile_s {
+        order: 4;
+      }
     }
   }
 
   &__icon {
     margin-right: 12px;
     max-height: 24px;
+  }
+
+  &__nav-languages {
+    grid-area: lang;
+    @include mobile {
+      order: 4;
+      margin-inline: 64px;
+    };
+
+    @include mobile_s {
+      order: 3;
+      margin-inline: 0;
+    }
+  }
+
+  &__nav-social {
+    grid-area: social;
+
+    @include mobile {
+      order: 3;
+    };
+
+    @include mobile_s {
+      order: 5;
+    }
   }
 
   &__nav-list {

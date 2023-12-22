@@ -18,14 +18,14 @@ function Chat() {
           Это чат с администратором. Ты можешь с ним пообщаться по любому
           вопросу о нашем сервисе и узнать о ходе работы
         </p>
-      </div>
-      <form className={styles["chat__input-wrapper"]}>
-        <textarea className={styles['chat__input']} placeholder="Введите сообщение для администратора" name="" id="" ></textarea>
-        {/* <input className={styles['chat__input']} type="text" name="" id="" /> */}
         <div className={styles['chat__order-wrapper']}>
           <Button pink={true} onClick={null} text='Заказать медиаплан'/>
           <Button blue={true} onClick={null} text='Заказать отчет'/>
         </div>
+      </div>
+      <form className={styles["chat__input-wrapper"]}>
+        <textarea className={styles['chat__input']} placeholder="Введите сообщение для администратора" ></textarea>
+        {/* <input className={styles['chat__input']} type="text" name="" id="" /> */}
         <div className={styles['chat__button-wrapper']}>
           <div className={styles['chat__modification']}>
             <ImageButton/>

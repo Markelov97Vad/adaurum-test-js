@@ -1,0 +1,35 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
+.boot-data {
+  padding-inline: 9px 11px;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    @include showFonts(
+      $size: 18px,
+      $color: $color-text-black,
+      $line-height: normal,
+      $weight: 600
+    );
+  }
+
+  &__header-icon {
+    margin-right: 9px;
+  }
+
+  &__button-show {
+    align-self: flex-end;
+    border: none;
+    background-color: inherit;
+    color: $color-pink;
+    margin-top: 12px;
+  }
+}
