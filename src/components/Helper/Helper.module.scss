@@ -1,47 +1,58 @@
 @use '../../assets/styles/variables' as *;
 @use '../../assets/styles/mixins' as *;
 
-.chat {
+.helper {
   width: 875px;
   height: 709px;
   background-color: $color-white;
   box-shadow: $shadow;
   border-radius: 20px;
-  padding: 26px 28px 28px;
+  padding: 23px 28px 28px;
   box-sizing: border-box;
-
+  
   @include mobile {
     max-width: 688px;
-    max-height: 709px;
+    // max-height: 709px;
+    padding-right: 18px;
   }
-
+  
   @include mobile_s {
     box-shadow: none;
     width: 100%;
     padding: 0;
-
+    // max-height: none;
+    height: auto;
   }
-
+  
   &__header {
+    gap: 26px;
     position: relative;
     display: flex;
     justify-content: space-between; 
     align-items: center;
     margin-bottom: 19px;
 
+    @include mobile {
+      gap: 19px;
+    }
+
     @include mobile_s {
       flex-wrap: wrap;
+      padding-inline: 20px;
+      gap: 0;
     }
 
     @include mobile_s {
       // display: grid;
       // grid-template-columns: 2fr;
       // grid-template-rows: 2fr;
-      padding-inline: 20px;
     }
   }
 
   &__title {
+    // margin-right: 209px;
+    width: 100%;
+    max-width: 425px;
     @include showFonts(
       $size: 24px,
       $color: $color-text-black,
@@ -49,7 +60,14 @@
       $weight: 600
     );
 
+    @include mobile {
+      margin-right: 0;
+      // max-width: 400px;
+    }
+
     @include mobile_s {
+      font-size: 20px;
+      max-width: 189px;
       order: 1;
     }
   }
@@ -65,6 +83,7 @@
   }
 
   &__text {
+    text-wrap: nowrap;
     @include showFonts(
       $size: 15px,
       $color: $color-text-black,
@@ -89,6 +108,8 @@
     border: none;
     height: 40px;
     width: 40px;
+    padding: 20px;
+    background: url('../../assets/images/munu.svg');
     @include mobile_s {
       order: 2;
     }

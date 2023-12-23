@@ -5,10 +5,6 @@
   width: 100%;
   display: flex;
   gap: 13px;
-  // margin-left: 20px;
-  // justify-content: flex-end;
-
-
 
   &__img-wrapper {
 
@@ -19,6 +15,11 @@
     width: 49px;
     height: 49px;
     object-fit: cover;
+
+    @include mobile_s {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   &__info-wrapper {

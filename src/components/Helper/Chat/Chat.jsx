@@ -6,34 +6,44 @@ import AddFileButton from "../../ui/AddFileButton/AddFileButton";
 import Button from "../../ui/Button/Button";
 import MessageWrapper from "../../MessageWrapper/MessageWrapper";
 import { useState } from "react";
+import { getCurrentTime } from "../../../utils";
 
 function Chat(props) {
-
   const { orderMediaplan, orderReport, dataMediaplan, dataReport } = props;
   const [inputValue, setInputValue] = useState('');
-  const [textValue, setTextValue] = useState([]);
+  const [messagesValue, setMessagesValue] = useState([]);
+  const isMissingData = dataMediaplan.length === 0 && dataReport.length === 0 && messagesValue.length === 0
 
   const handleInputChange = (evt) => {
     const { value } = evt.target
     setInputValue(() => value)
-    console.log(value);
+  }
+
+  const handleEnterKey = (evt) => {
+    if(evt.key === 'Enter') {
+      handleSubmit(evt)
+    }
   }
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    // console.log('inputValue',inputValue);
-    setTextValue(textValue => [
-      ...textValue,
-      inputValue
-    ])
+    if (inputValue.length === 0) {
+      return
+    }
 
+    setMessagesValue(messageValue => [
+      ...messageValue,
+      { text: inputValue, time: getCurrentTime()}
+    ]);
+
+    setInputValue(() => '');
   }
 
   return (
-    <div className={styles.chat}>
+    <div className={`${styles.chat} ${isMissingData ? '' : styles.chat_size_big}`}>
       <div className={styles["chat__chat-wrapper"]}>
         {
-          dataMediaplan.length === 0 && dataReport.length === 0 && textValue.length === 0 ?
+          isMissingData ?
           <>
             <img
               className={styles["chat__image"]}
@@ -45,25 +55,27 @@ function Chat(props) {
               вопросу о нашем сервисе и узнать о ходе работы
             </p>
           </> : 
-          <MessageWrapper textValue={textValue}/>
+          <MessageWrapper messagesValue={messagesValue}/>
         }
       </div>
-      <form className={styles["chat__input-wrapper"]} onSubmit={handleSubmit}>
+      <div className={styles['chat__form-wrapper']}>
         <div className={styles['chat__order-wrapper']}>
           <Button pink={true} onClick={orderMediaplan} text='Заказать медиаплан'/>
           <Button blue={true} onClick={orderReport} text='Заказать отчет'/>
         </div>
-        <textarea value={inputValue} onChange={handleInputChange} className={styles['chat__input']} placeholder="Введите сообщение для администратора" ></textarea>
-        <div className={styles['chat__button-wrapper']}>
-          <div className={styles['chat__modification']}>
-            <ImageButton/>
-            <AddFileButton/>
+        <form className={styles["chat__form"]} onSubmit={handleSubmit}>
+          <textarea onKeyDown={handleEnterKey} value={inputValue} onChange={handleInputChange} className={styles['chat__input']} placeholder="Введите сообщение для администратора"></textarea>
+          <div className={styles['chat__button-wrapper']}>
+            <div className={styles['chat__modification']}>
+              <AddFileButton/>
+              <ImageButton/>
+            </div>
+            <div className={styles['chat__send']}>
+              <SendButton />
+            </div>
           </div>
-          <div className={styles['chat__send']}>
-            <SendButton />
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

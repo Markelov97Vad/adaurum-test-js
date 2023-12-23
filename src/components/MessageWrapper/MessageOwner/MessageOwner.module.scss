@@ -16,6 +16,7 @@
   }
 
   &__text {
+    word-break: break-all;
     @include showFonts(
       $size: 16px,
       $color: $color-text-black,

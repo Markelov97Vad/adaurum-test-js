@@ -56,9 +56,10 @@ function BootData({ title, data, notificationName}) {
               <LoadingElement
                 key={file.id}
                 text={`${file.name} ${file.count}`}
+                date={file.date}
                 notificationName={notificationName}
                 status={isVisible}
-                reset={reset}
+                // reset={reset}
                 isOpen={isOpen}
               />
             )

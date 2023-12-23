@@ -15,7 +15,9 @@ function Header() {
         <div className={styles.header__info}>
           <div className={styles['header__info-wrapper']}>
             <i className={styles.header__icon} type="button"><Convert/></i>
-            <span className={`${styles.header__text} ${styles.header__text_type_convert}`}>5%</span>
+            <span className={`${styles.header__text} ${styles.header__text_type_convert}`}>
+              5% <span className={styles['header__text-description']}>выручки</span>
+            </span>
           </div>
           <div className={styles['header__info-wrapper']}>
             <i className={styles.header__icon} type="button"><Profile/></i>

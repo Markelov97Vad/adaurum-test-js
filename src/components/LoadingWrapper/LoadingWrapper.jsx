@@ -5,7 +5,7 @@ import LoadButton from "../ui/LoadButton/LoadButton";
 import styles from "./LoadingWrapper.module.scss";
 import SuccessIcon from "../icons/SuccessIcon";
 
-function LoadingWrapper({ text, notificationName, status, reset, isOpen }) {
+function LoadingWrapper({ text, notificationName, status, isOpen, date }) {
   const [isUploaded, setIsUploaded] = useState(false);
   // const [status, setStatus] = useState(false);
   const [stateforNotif, setstateforNotif] = useState(false);
@@ -65,7 +65,7 @@ function LoadingWrapper({ text, notificationName, status, reset, isOpen }) {
           {
             isUploaded ? <>
               <SuccessIcon/>
-              <span className={styles['process-notification__text']}>{notificationName} от 1.06.22 готов</span>
+              <span className={styles['process-notification__text']}>{notificationName} от {date} готов</span>
             </> : <>
               <SubtractIcon/>
               <span className={styles['process-notification__text']}>{setTextNotificarion(notificationName)}</span>

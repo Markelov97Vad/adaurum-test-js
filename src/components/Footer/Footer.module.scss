@@ -2,52 +2,78 @@
 @use '../../assets/styles/mixins' as *;
 
 .footer {
-  width: 100%;
+  // width: 100%;
   background-color: $color-gray;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 28px 40px 27px;
+
+  @include mobile {
+    padding-top: 35px;
+  }
   
   @include mobile_s {
     background-color: $color-white;
+    // padding: 47px 20px 40px;
+    padding: 36px 20px 40px;
+    // margin-top: 47px;
+    // padding: ;
     // justify-content: start;
   }
   
   &__wrapper {
     box-sizing: border-box;
-    padding: 28px 40px 27px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1200px;
     flex-wrap: wrap;
+    row-gap: 65px;
     
     @include mobile {
-      justify-content: flex-start;
-      padding-top: 35px;
-      padding-bottom: 32px;
-      row-gap: 25px;
+      // justify-content: flex-start;
+      display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      // grid-template-columns: 156px 94px 1fr 50px ;
+      grid-template-columns: 156px 94px 104px 1fr ;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: 
+      "logo logo politic politic ."
+      "res lang lang mail .";
+
+      // padding-top: 35px;
+      // padding-bottom: 32px;
+      // row-gap: 25px;
+      row-gap: 15px;
+      flex-wrap: none;
+      justify-content: none;
+
     };
     
     @include mobile_s {
+      display: flex;
       flex-direction: column;
       align-items: flex-start;
-      row-gap: 20px;
-      padding: 40px 20px 40px;
+      row-gap: 19px;
+      // padding: 40px 20px 40px;
     }
   }
 
   &__logo {
     // grid-area: logo;
+    margin-right: 38px;
     @include mobile {
-      order: 1;
+      margin-right: 29px;
+      // order: 1;
+      grid-area: logo;
     }
   }
 
   &__text {
     @include showFonts(
-      $size: 18px,
+      $size: 15px,
       $color: $color-text-gray,
       $line-height: 21.75px,
       $weight: 500
@@ -63,8 +89,9 @@
 
     &_type_politic {
       @include mobile {
-        order: 2;
-        margin-inline: 41px 100px;
+        // order: 2;
+        margin-inline: 0 100px;
+        grid-area: politic;
       };
 
       @include mobile_s {
@@ -78,7 +105,8 @@
       align-items: center;
 
       @include mobile {
-        order: 5;
+        grid-area: mail;
+        // order: 5;
       };
 
       @include mobile_s {
@@ -93,10 +121,11 @@
   }
 
   &__nav-languages {
-    grid-area: lang;
+    // grid-area: lang;
     @include mobile {
-      order: 4;
-      margin-inline: 64px;
+      // order: 4;
+      // margin-inline: 64px;
+      grid-area: lang;
     };
 
     @include mobile_s {
@@ -106,10 +135,11 @@
   }
 
   &__nav-social {
-    grid-area: social;
-
+    
     @include mobile {
-      order: 3;
+      // grid-area: social;
+      grid-area: res;
+      // order: 3;
     };
 
     @include mobile_s {

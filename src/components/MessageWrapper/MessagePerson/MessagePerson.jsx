@@ -1,5 +1,6 @@
 import avatar from '../../../assets/images/avatar-person.png';
 import avatarTest from '../../../assets/images/avatar.jpeg';
+import { getCurrentTime } from '../../../utils';
 import styles from './MessagePerson.module.scss';
 
 function MessagePerson() {
@@ -16,7 +17,7 @@ function MessagePerson() {
         </div>
         <div className={styles['message-person__about-wrapper']}>
           <h4 className={styles['message-person__name']}>Jim</h4>
-          <span className={styles[['message-person__time']]}>20:43</span>
+          <span className={styles[['message-person__time']]}>{getCurrentTime()}</span>
         </div>
       </div>
     </div>

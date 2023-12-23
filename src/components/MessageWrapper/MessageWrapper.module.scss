@@ -9,6 +9,12 @@
   padding: 49px 20px 70px 26px;
   box-sizing: border-box;
   // justify-content: center;
+
+  @include mobile_s {
+    padding-top: 30px;
+    padding-inline: 0 16px;
+    gap: 21px;
+  }
   
   &__text {
     text-align: center;
@@ -18,5 +24,9 @@
       $line-height: 20.25px,
       $weight: 400
     );
+
+    @include mobile_s {
+      margin-bottom: 6px;
+    }
   }
 }

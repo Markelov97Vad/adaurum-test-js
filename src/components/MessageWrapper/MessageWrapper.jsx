@@ -1,15 +1,23 @@
+import { useEffect, useRef } from "react";
 import MessageOwner from "./MessageOwner/MessageOwner";
 import MessagePerson from "./MessagePerson/MessagePerson";
 import styles from './MessageWrapper.module.scss';
+import { getCurrentTime } from "../../utils";
 
-function MessageWrapper({ textValue }) {
+function MessageWrapper({ messagesValue }) {
+  const div = useRef();
+
+  useEffect(() => {
+    div.current.scrollIntoView({ behavior: 'smooth', block: "end", inline: "nearest" })
+  }, [messagesValue]);
+
   return (
-    <div className={styles['message-wrapper']}>
-      <p className={styles['message-wrapper__text']}>Сегодня, 20:43</p>
+    <div ref={div} className={styles['message-wrapper']}>
+      <p className={styles['message-wrapper__text']}>Сегодня, {getCurrentTime()}</p>
       <MessagePerson/>
       {
-        textValue.map((text, i) => (
-          <MessageOwner key={i} textValue={text}/>
+        messagesValue.map((value, i) => (
+          <MessageOwner key={i} textValue={value}/>
         ))
       }
       {/* <MessagePerson/>

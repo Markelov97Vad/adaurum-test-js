@@ -17,14 +17,14 @@
     scrollbar-color: $color-scrollbar inherit;
     &::-webkit-scrollbar {
       width: 6px;
-      height: 80px;
+      height: 8px;
     }
   
     &::-webkit-scrollbar-thumb {
       background: $color-scrollbar;
       border-radius: 54px;
       width: 6px;
-      height: 80px;
+      height: 8px;
     }
 
   @include mobile {
@@ -33,16 +33,18 @@
     width: 100%;
     max-width: 688px;
     max-height: 405px;
+    padding-bottom: 36px;
   }
 
   @include mobile_s{
     border-radius: 0;
-    padding: 20px;
+    padding: 17px 17px 21px;
     box-shadow: none;
   }
 
   &__title {
     margin-left: 9px;
+    margin-bottom: 6px;
     @include showFonts(
       $size: 24px,
       $color: $color-text-black,
@@ -60,12 +62,17 @@
     flex-direction: column;
     margin-top: 32px;
     gap: 32px;
+
+    @include mobile_s{
+      display: none;
+    }
   }
 
   &__container {
     @include mobile {
       display: flex;
-      margin-inline: 86px 80px;
+      gap: 21px;
+      margin-inline: 78px 21px;
     }
 
     @include mobile_s{
@@ -74,7 +81,7 @@
   }
 
   &__image {
-    margin-top: 46px;
+    margin-top: 41px;
 
     @include mobile {
       margin-top: 0;
@@ -84,7 +91,8 @@
   }
 
   &__subtitle {
-    margin-left: 6px;
+    margin: 24px 0 0;
+    text-align: center;
     @include showFonts(
       $size: 16px,
       $color: $color-text-black,
@@ -92,11 +100,11 @@
       $weight: 500
     );
 
-    margin-top: 30px;
-
     @include mobile {
-      margin-top: 123px;
+      // margin-top: 123px;
       margin-left: 0;
+      margin-top: 117px;
+      text-align: left;
     }
   }
 

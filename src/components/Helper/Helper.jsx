@@ -6,68 +6,46 @@ import styles from './Helper.module.scss';
 
 function Helper(props) {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
-  const popupRef = useRef();
+  const popupRef = useRef(null);
+  const popupChildRef = useRef(null);
+  const buttonMenuRef = useRef(null);
 
-  const handleOpenPopup = (evt) => {
-    if (evt.target !== evt.currentTarget) {
-      console.log('target',evt.target);
-      console.log('current',evt.currentTarget);
-      setIsOpenPopup(false);
-    }
-
-    if (evt.key === 'Escape') {
-      setIsOpenPopup(false);
-    }
-    // if (evt.target === evt.currentTarget) {
-    //   console.log('target!');
-    //   setIsOpenPopup(true)
-    // }
-  }
   
-  const handleOpenPopup2 = (evt) => {
-    // if (evt.target !== evt.currentTarget) {
-    //   console.log('target',evt.target);
-    //   console.log('current',evt.currentTarget);
-    //   console.log('target');
-    // } else {
-    //   setIsOpenPopup(false);
-    // }
+  const handleOpenPopup = (evt) => {
     setIsOpenPopup(!isOpenPopup)
   }
 
-  // useEffect(() => {
-  //   // const onClick = (evt) => {
-  //   //   if (evt.target !== evt.currentTarget) {
-  //   //     setIsOpenPopup(false)
-  //   //     console.log('sas');
-  //   //   }
-  //   // }
-  //   document.addEventListener('click', onClick);
+  useEffect(() => {
+    const onClick = (evt) => {
+      if (evt.target !== popupRef.current && evt.target !== buttonMenuRef.current && evt.target !== popupChildRef.current) {
+        setIsOpenPopup(false)
+      }
+    }
+    document.addEventListener('click', onClick);
 
-  //   return () => document.removeEventListener('click', onClick)
-  // },[])
+    return () => document.removeEventListener('click', onClick)
+  },[])
 
   return (
-    <section className={styles.chat}>
-      <div className={styles.chat__header}>
-        <h2 className={styles.chat__title}>
+    <section className={styles.helper}>
+      <div className={styles.helper__header}>
+        <h2 className={styles.helper__title}>
           Личный помощник 
         </h2>
-        <div className={styles.chat__info}>
-          <p className={styles.chat__text}>
+        <div className={styles.helper__info}>
+          <p className={styles.helper__text}>
             Jim Davidson
           </p>
-          <p className={`${styles.chat__text} ${styles.chat__text_type_mail}`}>
+          <p className={`${styles.helper__text} ${styles.helper__text_type_mail}`}>
             Jim Davidson@adaurum.ru
           </p>
         </div>
-        <button onClick={handleOpenPopup2} className={styles['chat__button-menu']} type="button">
-          <MenuIcon/>
+        <button ref={buttonMenuRef} onClick={handleOpenPopup} className={styles['helper__button-menu']} type="button">
         </button>
         {
           isOpenPopup && 
-          <div ref={popupRef} className={styles[['chat__popup-wrapper']]} onClick={handleOpenPopup}>
-            <Popup/>
+          <div ref={popupRef} className={styles['helper__popup-wrapper']} >
+            <Popup ref={popupChildRef}/>
           </div>
         }
       </div>

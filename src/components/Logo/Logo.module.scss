@@ -6,11 +6,14 @@
   height: 32px;
 
   @include mobile {
-    width: 209px;
-    height: 29px;
+    width: 222px;
+    height: 30px;
+    margin-bottom: 6px;
   }
   @include mobile_s {
-    width: 181px;
-    height: 24px;
+    margin-bottom: 0;
+    margin-left: 7px;
+    width: 182px;
+    height: 27px;
   }
 }
