@@ -1,8 +1,23 @@
-# React + Vite
+### Описание:
+***Тестовое задание на позицию Frontend-разработчик.***
+___
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Функционал (frontend):
+- ***Заказать медиаплан*** асинхронный запрос, в блок Файлы добавляются медиапланы:
+- ***Заказать отчет*** асинхронный запрос, в блок Файлы добавляются элементы с отчетами:
+- ***Рендер сообщений*** отправка текстового содержимого в окно чата:
+- ***Адаптивный дизайн*** Desktop(1440px), Tablet(768px), Mobile(375px):
 
-Currently, two official plugins are available:
+____
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Стек технологий
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+
+----
+Макет: https://www.figma.com/file/QbTT8hxNlk2JuducvhV5OE/Pink_Chicken?type=design&node-id=1%3A535&mode=design&t=81Ofe5Yv7OstwrsO-1

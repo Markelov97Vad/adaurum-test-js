@@ -5,6 +5,12 @@
   border: none;
   padding: 12px 22px;
   border-radius: 21px;
+  transition: all .2s ease-in;
+
+  &:hover {
+    opacity: .7;
+  }
+  
   @include showFonts(
       $size: 16px,
       $color: $color-white,

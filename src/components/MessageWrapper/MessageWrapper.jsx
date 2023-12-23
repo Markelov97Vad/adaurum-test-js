@@ -8,7 +8,7 @@ function MessageWrapper({ messagesValue }) {
   const div = useRef();
 
   useEffect(() => {
-    div.current.scrollIntoView({ behavior: 'smooth', block: "end", inline: "nearest" })
+    div.current.scrollIntoView({ behavior: 'smooth', block: "end", inline: "nearest"})
   }, [messagesValue]);
 
   return (
@@ -20,8 +20,6 @@ function MessageWrapper({ messagesValue }) {
           <MessageOwner key={i} textValue={value}/>
         ))
       }
-      {/* <MessagePerson/>
-      <MessageOwner/> */}
     </div>
   );
 }

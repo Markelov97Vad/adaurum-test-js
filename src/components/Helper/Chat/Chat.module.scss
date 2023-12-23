@@ -22,7 +22,7 @@
     padding: 0 20px 30px;
     height: 633px;
   }
-  
+
   &_size_big {
     @include mobile_s {
       height: 730px;
@@ -96,30 +96,27 @@
   }
 
   &__form {
+    position: absolute;
+    bottom: 0;
     background-color: $color-white;
     border-radius: 20px;
-    border: 2px solid #EBEBEB;
+    border: 2px solid $color-gray;
     border-radius: 20px;
-    // padding: 28px 20px 12px;
     padding: 18px 16px 0;
+    min-height: 144px;
+    width: 100%;
+    box-sizing: border-box;
 
     @include mobile_s {
       padding-right: 10px;
-      min-height: 144px;
       box-sizing: border-box;
     }
   }
   
   &__input {
-    // box-sizing: border-box;
     width: 100%;
-    // padding-top: 10px;
-    // box-sizing: border-box;
-    // min-height: 50px;
     border: none;
     resize: none;
-    // width: 640px;
-    // height: 144px;
     z-index: 4;
     top: 10px;
 
@@ -135,9 +132,6 @@
       height: 8px;
     }
 
-    &::placeholder {
-      // padding-left: 10px;
-    }
     @include showFonts(
       $size: 15px,
       $color: $color-text-black,
@@ -154,23 +148,16 @@
     }
   }
 
-  // &__input-wrapper:focus-within &__input:focus  {
-  //   border: 2px solid #EE26C2;
-  // }
   &__form:focus-within {
-    border: 2px solid #EE26C2;
+    border: 2px solid $color-pink;
   }
 
   &__button-wrapper {
     display: flex;
     box-sizing: border-box;
-    // padding-inline: 20px;
     width: 100%;
     justify-content: space-between;
     align-items: end;
-    // position: absolute;
-    // bottom: 4px;
-    // left: 0;
     z-index: 0;
 
     @include mobile_s {
@@ -180,7 +167,7 @@
 
   &__order-wrapper {
     position: absolute;
-    top: -64px;
+    bottom: 162px;
     left: 20px;
     display: flex;
     gap: 12px;
@@ -189,10 +176,9 @@
       display: flex;
       flex-direction: column-reverse;
       align-items: end;
-      top: -115px;
+      bottom: 162px;
       right: 10px;
     }
-    // margin-bottom: 20px;
   }
 
   &__modification {
@@ -216,10 +202,8 @@
     @include mobile_s {
       margin-right: 0;
       position: absolute;
-      // display: flex;
       top: 17px;
       right: -2px;
     }
-    // z-index: 1;
   }
 }

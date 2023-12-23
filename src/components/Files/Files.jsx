@@ -3,9 +3,7 @@ import fileImg from '../../assets/images/files-img.png'
 import Button from '../ui/Button/Button';
 import BootData from '../BootData/BootData';
 
-
 function Files({ dataMediaplan, dataReport }) {
-  
   return (
     <section className={styles.files}>
       <h2 className={styles.files__title}>

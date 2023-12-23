@@ -3,7 +3,7 @@ import Files from "../Files/Files";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import styles from "./App.module.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getDate } from "../../utils";
 
 function App() {
@@ -50,16 +50,10 @@ function App() {
       .catch(err => console.log(err))
   }
 
-  // useEffect(() => {
-  //   console.log('dataMediaplan', dataMediaplan);
-  //   console.log('dataReport', dataReport);
-
-  // }, [dataMediaplan, dataReport]);
-
   return (
     <>
       <Header/>
-      <main className={styles.main}>
+      <main className={styles. main}>
         <Files dataMediaplan={dataMediaplan} dataReport={dataReport}/>
         <Helper orderMediaplan={orderMediaplan} orderReport={orderReport} dataMediaplan={dataMediaplan} dataReport={dataReport}/>
       </main>

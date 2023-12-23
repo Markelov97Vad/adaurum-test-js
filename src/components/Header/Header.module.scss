@@ -4,9 +4,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  // margin: 0;
   align-items: center;
-  // width: 100%;
   max-width: 1200px;
   padding-top: 31px;
   margin: 0 auto;
@@ -29,11 +27,9 @@
     gap: 26px;
 
     @include mobile_s {
-      // flex-direction: column-reverse;
       justify-content: space-between;
       width: 100%;
       margin-top: 13px;
-      // gap: 4px;
     }
   }
   
@@ -44,7 +40,6 @@
     @include mobile_s {
       flex-direction: column-reverse;
       justify-content: start;
-      // align-items: flex-end;
       gap: 5px;
     }
 
@@ -68,7 +63,12 @@
   
   &__button {
     border: none;
-    background-color: inherit
+    background-color: inherit;
+    transition: all .2s ease-in;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 
   &__text {
@@ -99,9 +99,6 @@
     &-description {
       display: none;
       @include mobile_s {
-        // color: $color-text-gray;
-        // font-size: 12px;
-        // font-weight: 500;
         display: inline;
       }
     }

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import Popup from '../Popup/Popup';
-import MenuIcon from '../icons/MenuIcon';
 import Chat from './Chat/Chat';
 import styles from './Helper.module.scss';
 
@@ -9,9 +8,8 @@ function Helper(props) {
   const popupRef = useRef(null);
   const popupChildRef = useRef(null);
   const buttonMenuRef = useRef(null);
-
   
-  const handleOpenPopup = (evt) => {
+  const handleOpenPopup = () => {
     setIsOpenPopup(!isOpenPopup)
   }
 

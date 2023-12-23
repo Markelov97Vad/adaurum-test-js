@@ -1,5 +1,4 @@
 import avatar from '../../../assets/images/avatar-person.png';
-import avatarTest from '../../../assets/images/avatar.jpeg';
 import { getCurrentTime } from '../../../utils';
 import styles from './MessagePerson.module.scss';
 

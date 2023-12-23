@@ -3,13 +3,11 @@ import Logout from "../icons/Logout";
 import Profile from "../icons/Profile";
 import Settings from "../icons/Settings";
 import Logo from "../logo/Logo";
-// import Logo from "../icons/Logo";
 import styles from './Header.module.scss';
 
 function Header() {
   return (
     <header className={styles.header}>
-      {/* <Logo gray={false}/> */}
       <Logo colored={true}/>
       <div className={styles.header__wrapper}>
         <div className={styles.header__info}>

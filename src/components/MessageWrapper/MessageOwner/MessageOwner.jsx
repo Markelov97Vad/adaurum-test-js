@@ -5,7 +5,6 @@ function MessageOwner({ textValue }) {
       <div className={styles['message-owner__text-wrapper']}>
         <p className={styles['message-owner__text']}>
         {textValue.text}
-        {/* Lörem ipsum suparad pepött då satsig och soskap metrosocial. Sapongar trenåvis i hypol innan visiskap, heterovybelt. Besav ditugen stenosade om exopagt.  */}
         </p>
       </div>
       <span className={styles['message-owner__time']}>

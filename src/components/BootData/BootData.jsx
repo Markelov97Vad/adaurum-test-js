@@ -6,32 +6,12 @@ import styles from './BootData.module.scss';
 function BootData({ title, data, notificationName}) {
   const [isOpen, setIsOpen] = useState(true);
   const [count, setCount] = useState(4);
-  const [renderData, setRenderData] = useState([]);
   const [reset, setReset] = useState(false);
-
-  // useEffect(() => {
-  //   // slice
-  //   setRenderData((data1) => [
-  //     ...data1,
-  //     // ...renderData.filter(file => {
-  //     //   return file.count
-  //     // })
-  //     ...data.slice(data1.length, data1.length + count)
-  //   ])
-  //   console.log(renderData);
-  // }, [count]);
-
-  const handleChangeState = (boolean = false) => {
-    return boolean
-  }
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
     setCount(() => 4)
-    // setReset(!reset);
     setReset(true);
-    // handleChangeState()
-    // ddddddsasa
   }
 
   const handleShowButton = () => {
@@ -59,7 +39,6 @@ function BootData({ title, data, notificationName}) {
                 date={file.date}
                 notificationName={notificationName}
                 status={isVisible}
-                // reset={reset}
                 isOpen={isOpen}
               />
             )

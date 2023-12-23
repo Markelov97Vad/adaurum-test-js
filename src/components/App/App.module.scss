@@ -8,11 +8,9 @@
   gap: 30px;
   padding: 33px 0 60px;
   box-sizing: border-box;
-  // box-sizing: border-box;
 
   @include mobile {
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
     gap: 20px;
     padding-top: 30px;

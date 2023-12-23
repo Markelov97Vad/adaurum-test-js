@@ -4,6 +4,7 @@
 .logo {
   width: 219px;
   height: 32px;
+  cursor: pointer;
 
   @include mobile {
     width: 222px;

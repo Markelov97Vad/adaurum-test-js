@@ -7,8 +7,7 @@ import SuccessIcon from "../icons/SuccessIcon";
 
 function LoadingWrapper({ text, notificationName, status, isOpen, date }) {
   const [isUploaded, setIsUploaded] = useState(false);
-  // const [status, setStatus] = useState(false);
-  const [stateforNotif, setstateforNotif] = useState(false);
+  const [isStatusDisplayed, setIsStatusDisplayed] = useState(true);
 
   useEffect(() => {
     const timeout =  setTimeout(() => {
@@ -18,16 +17,10 @@ function LoadingWrapper({ text, notificationName, status, isOpen, date }) {
   }, [text]);
 
   useEffect(() => {
-    // if (reset) {
-    //   console.log('reset');
-    // }
-    console.log('RESET');
     if (!isOpen) {
-      setstateforNotif(true)
-      
+      setIsStatusDisplayed(false)
     }
   }, [isOpen])
-  // console.log('Render');
 
   const setTextNotificarion = (notificationName) => {
     switch (notificationName) {
@@ -49,18 +42,11 @@ function LoadingWrapper({ text, notificationName, status, isOpen, date }) {
             <XmlIcon />
             <span className={styles["loading-element__text"]}>{text}</span>
           </div>
-          {/* <LoadButton onClick={() => setStatus(!status)} isUploaded={isUploaded} /> */}
           <LoadButton isUploaded={isUploaded} />
         </div>
       </div>
-      {/* <div className={styles['notification']}>
-        notification
-        <SubtractIcon/>
-        <span >Медиаплан в процессе составления</span>
-      </div> */}
-      {/* <ProcessNotification /> */}
       {
-        !stateforNotif &&
+        isStatusDisplayed &&
         <div className={`${styles['process-notification']} ${styles['loading-wrapper__process-notification']}`}>
           {
             isUploaded ? <>

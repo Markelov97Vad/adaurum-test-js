@@ -1,8 +1,5 @@
 @use './mixins' as *;
 @use './variables' as *;
-// @use '../../assets/styles/variables' as *;
-// @use '../../assets/styles/mixins' as *;
-
 
 body,
 h1,
@@ -62,10 +59,4 @@ input {
   @include mobile_s {
     background-color: $color-white;
   }
-}
-
-.root {
-  // max-width: 1440px;
-  // display: grid;
-  // place-items: center;
 }

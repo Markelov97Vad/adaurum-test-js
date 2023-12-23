@@ -12,7 +12,7 @@ function Chat(props) {
   const { orderMediaplan, orderReport, dataMediaplan, dataReport } = props;
   const [inputValue, setInputValue] = useState('');
   const [messagesValue, setMessagesValue] = useState([]);
-  const isMissingData = dataMediaplan.length === 0 && dataReport.length === 0 && messagesValue.length === 0
+  const isMissingData = dataMediaplan.length === 0 && dataReport.length === 0 && messagesValue.length === 0;
 
   const handleInputChange = (evt) => {
     const { value } = evt.target

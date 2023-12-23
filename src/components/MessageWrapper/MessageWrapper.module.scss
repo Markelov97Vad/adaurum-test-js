@@ -6,18 +6,20 @@
   display: flex;
   flex-direction: column;
   gap: 11px;
-  padding: 49px 20px 70px 26px;
+  padding: 49px 20px 230px 26px;
   box-sizing: border-box;
-  // justify-content: center;
+  border-bottom-width: 500px;
 
   @include mobile_s {
     padding-top: 30px;
     padding-inline: 0 16px;
+    padding-bottom: 160px;
     gap: 21px;
   }
   
   &__text {
     text-align: center;
+    margin-bottom: 14px;
     @include showFonts(
       $size: 15px,
       $color: $color-text-gray,

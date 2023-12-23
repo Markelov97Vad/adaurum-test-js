@@ -10,7 +10,7 @@ export function getDate() {
     month: 'numeric',
     year: '2-digit',
     formatMatcher: "basic"
-});
+  });
 
   return dateFormatter.format(new Date())
 }

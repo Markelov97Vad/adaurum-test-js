@@ -2,7 +2,6 @@
 @use '../../assets/styles/mixins' as *;
 
 .footer {
-  // width: 100%;
   background-color: $color-gray;
   display: flex;
   align-items: center;
@@ -15,11 +14,7 @@
   
   @include mobile_s {
     background-color: $color-white;
-    // padding: 47px 20px 40px;
     padding: 36px 20px 40px;
-    // margin-top: 47px;
-    // padding: ;
-    // justify-content: start;
   }
   
   &__wrapper {
@@ -33,19 +28,12 @@
     row-gap: 65px;
     
     @include mobile {
-      // justify-content: flex-start;
       display: grid;
-      // grid-template-columns: repeat(3, 1fr);
-      // grid-template-columns: 156px 94px 1fr 50px ;
       grid-template-columns: 156px 94px 104px 1fr ;
       grid-template-rows: repeat(2, 1fr);
       grid-template-areas: 
       "logo logo politic politic ."
       "res lang lang mail .";
-
-      // padding-top: 35px;
-      // padding-bottom: 32px;
-      // row-gap: 25px;
       row-gap: 15px;
       flex-wrap: none;
       justify-content: none;
@@ -57,21 +45,25 @@
       flex-direction: column;
       align-items: flex-start;
       row-gap: 19px;
-      // padding: 40px 20px 40px;
     }
   }
 
   &__logo {
-    // grid-area: logo;
     margin-right: 38px;
     @include mobile {
       margin-right: 29px;
-      // order: 1;
       grid-area: logo;
     }
   }
 
   &__text {
+    transition: all .2s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .7;
+    }
+
     @include showFonts(
       $size: 15px,
       $color: $color-text-gray,
@@ -89,7 +81,6 @@
 
     &_type_politic {
       @include mobile {
-        // order: 2;
         margin-inline: 0 100px;
         grid-area: politic;
       };
@@ -100,18 +91,20 @@
     }
 
     &_type_mail {
-      // grid-area: mail;
       display: flex;
       align-items: center;
 
       @include mobile {
         grid-area: mail;
-        // order: 5;
       };
 
       @include mobile_s {
         order: 4;
       }
+    }
+
+    &_type_active {
+      color: $color-pink;
     }
   }
 
@@ -121,10 +114,7 @@
   }
 
   &__nav-languages {
-    // grid-area: lang;
     @include mobile {
-      // order: 4;
-      // margin-inline: 64px;
       grid-area: lang;
     };
 
@@ -137,9 +127,7 @@
   &__nav-social {
     
     @include mobile {
-      // grid-area: social;
       grid-area: res;
-      // order: 3;
     };
 
     @include mobile_s {
@@ -152,5 +140,14 @@
     align-items: center;
     gap: 12px;
     max-height: 40px;
+  }
+
+  &__social {
+    cursor: pointer;
+    transition: all .2s ease-in;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 }
