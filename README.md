@@ -21,3 +21,9 @@ ____
 
 ----
 Макет: https://www.figma.com/file/QbTT8hxNlk2JuducvhV5OE/Pink_Chicken?type=design&node-id=1%3A535&mode=design&t=81Ofe5Yv7OstwrsO-1
+
+### Установка и запуск проекта:
+
+1. `git clone https://github.com/Markelov97Vad/adaurum-test-js.git - клонировать репозиторий на свое устройство (HTTPS)
+2. `npm i` - установить зависимости
+3. `npm run dev` - запустить приложение
