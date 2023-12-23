@@ -123,4 +123,29 @@
       gap: 12px;
     }
   }
+
+  &__button {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: $color-white;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    @include showFonts(
+      $size: 14px,
+      $color: $color-text-black,
+      $line-height: normal,
+      $weight: 600
+    );
+
+    &_type_plan {
+      border: 1px solid $color-pink;
+    }
+
+    &_type_report {
+      border: 1px solid $color-blue;
+    }
+  }
 }

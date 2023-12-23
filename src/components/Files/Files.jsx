@@ -2,6 +2,7 @@ import styles from './Files.module.scss';
 import fileImg from '../../assets/images/files-img.png'
 import Button from '../ui/Button/Button';
 import BootData from '../BootData/BootData';
+import SuccessIcon from '../icons/SuccessIcon';
 
 function Files({ dataMediaplan, dataReport }) {
   return (
@@ -21,8 +22,23 @@ function Files({ dataMediaplan, dataReport }) {
           </div>
       }
     <div className={styles.files__modification}>
-      <Button gray={true} text={'Медиапланы'}/>
-      <Button gray={true} text={'Отчеты'}/>
+      {
+        dataMediaplan.length === 0 ? 
+          <Button gray={true} text={'Медиапланы'}/> 
+          :
+          <button className={`${styles.files__button} ${styles.files__button_type_plan}`} type="button">
+            Медиапланы <SuccessIcon/>
+          </button>
+      }
+
+      {
+        dataReport.length === 0 ?
+          <Button gray={true} text={'Отчеты'}/>
+        :
+          <button className={`${styles.files__button} ${styles.files__button_type_report}`} type="button">
+            Отчеты <SuccessIcon/>
+          </button>
+      }
     </div>
     </section>
   );

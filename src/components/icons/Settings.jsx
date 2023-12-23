@@ -1,3 +1,5 @@
+import styles from './Icons.module.scss'
+
 function Settings() {
   return (
     <svg
@@ -7,7 +9,7 @@ function Settings() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="40" height="40" rx="20" fill="white" />
+      <rect className={styles['settings-icon']} width="40" height="40" rx="20" fill="white" />
       <path
         d="M23 20C23 18.34 21.66 17 20 17C18.34 17 17 18.34 17 20C17 21.66 18.34 23 20 23C20.41 23 20.81 22.92 21.17 22.76"
         stroke="#292D32"

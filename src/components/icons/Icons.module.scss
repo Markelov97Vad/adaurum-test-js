@@ -1,0 +1,13 @@
+@use '../../assets/styles/variables' as *;
+@use '../../assets/styles/mixins' as *;
+
+.settings-icon {
+  @include mobile_s {
+    fill: #F5F5F5;
+  }
+}
+.logout-icon {
+  @include mobile_s {
+    fill: #F5F5F5;
+  }
+}
