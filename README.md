@@ -21,6 +21,7 @@ ____
 
 ----
 Макет: https://www.figma.com/file/QbTT8hxNlk2JuducvhV5OE/Pink_Chicken?type=design&node-id=1%3A535&mode=design&t=81Ofe5Yv7OstwrsO-1
+
 Деплой: https://markelov97vad.github.io/adaurum-test-js/
 
 ### Установка и запуск проекта:
